@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Open-Source AI Model Landscape: Image · Video · Audio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<header>
+  <h1>Open-Source AI Model Landscape</h1>
+  <p class="subtitle">Image · Video · Audio Generation — License, Data &amp; Attribution</p>
+  <div class="stat-strip" id="stat-strip"></div>
+</header>
+
+<main>
+  <section class="controls">
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="text" id="search" placeholder="Search model, developer, license, notes...">
+      <kbd class="search-kbd">/</kbd>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label">Modality</span>
+      <div class="chip-row" id="modality-filters"></div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label">License Type</span>
+      <div class="chip-row" id="license-filters"></div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label">Commercial Use</span>
+      <select id="commercial-filter">
+        <option value="">Any</option>
+        <option value="full">Full</option>
+        <option value="partial">Partial / Conditional</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label">Sort by</span>
+      <select id="sort-by">
+        <option value="name">Name (A–Z)</option>
+        <option value="year-desc">Year (newest)</option>
+        <option value="year-asc">Year (oldest)</option>
+        <option value="modality">Modality</option>
+      </select>
+    </div>
+
+    <button id="reset-filters">
+      <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>
+      Reset
+    </button>
+  </section>
+
+  <p class="result-count" id="result-count"></p>
+
+  <section id="card-grid" class="card-grid"></section>
+
+  <div class="no-results" id="no-results" hidden>
+    <p class="no-results-emoji">🔍</p>
+    <p>No models match your filters.</p>
+  </div>
+</main>
+
+<div class="modal-overlay" id="modal-overlay" hidden>
+  <div class="modal" id="modal-content"></div>
+</div>
+
+<footer>
+  <p>Private reference site · Data compiled from public model cards &amp; documentation · Not legal advice.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
