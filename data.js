@@ -283,7 +283,7 @@ const MODELS = [
     model: "LUKE FAKE ENTRY",
     developer: "Stability AI",
     year: "2026",
-    modality: "MAGIC",
+    modality: "Audio",
     io: "Text → Audio/Music",
     licenseType: "Fully Open",
     licenseName: "Apache 2.0",
