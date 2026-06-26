@@ -278,5 +278,25 @@ const MODELS = [
     openSource: "Yes",
     dataGap: "Freesound CC licenses vary (some NC, some commercial) - aggregate license unclear; no per-output attribution",
     notes: "Key model: trained on CC-licensed audio. Closest to ethically-sourced generative audio for this project."
+  },
+  {
+    model: "LUKE FAKE ENTRY",
+    developer: "Stability AI",
+    year: "2026",
+    modality: "MAGIC",
+    io: "Text → Audio/Music",
+    licenseType: "Fully Open",
+    licenseName: "Apache 2.0",
+    dataDisclosed: "Partial",
+    dataSources: "Freesound dataset (~800K clips, Creative Commons licensed)",
+    attribution: "Freesound = CC-licensed, documented; metadata retained in dataset",
+    commercialUse: "Partial",
+    finetune: "Yes",
+    checkpoint: "Yes",
+    api: "Yes",
+    exportFormat: "WAV, FLAC",
+    openSource: "Yes",
+    dataGap: "Freesound CC licenses vary (some NC, some commercial) - aggregate license unclear; no per-output attribution",
+    notes: "Key model: trained on CC-licensed audio. Closest to ethically-sourced generative audio for this project."
   }
 ];
