@@ -3,15 +3,15 @@ const state = {
   modality: new Set(),
   license: new Set(),
   commercial: "",
-  sort: "name"
+  sort: "name",
 };
 
-const modalities = [...new Set(MODELS.map(m => m.modality))];
-const licenseTypes = [...new Set(MODELS.map(m => m.licenseType))];
+const modalities = [...new Set(MODELS.map((m) => m.modality))];
+const licenseTypes = [...new Set(MODELS.map((m) => m.licenseType))];
 
 function buildChips(containerId, values, setRef) {
   const container = document.getElementById(containerId);
-  values.forEach(value => {
+  values.forEach((value) => {
     const chip = document.createElement("div");
     chip.className = "chip";
     chip.textContent = value;
@@ -44,8 +44,8 @@ function buildStatStrip() {
   });
   strip.appendChild(total);
 
-  modalities.forEach(mod => {
-    const count = MODELS.filter(m => m.modality === mod).length;
+  modalities.forEach((mod) => {
+    const count = MODELS.filter((m) => m.modality === mod).length;
     const pill = document.createElement("div");
     pill.className = `stat-pill stat-${mod}`;
     pill.dataset.value = mod;
@@ -66,15 +66,18 @@ function buildStatStrip() {
 }
 
 function syncChipGroup(containerId, setRef) {
-  document.querySelectorAll(`#${containerId} .chip`).forEach(chip => {
+  document.querySelectorAll(`#${containerId} .chip`).forEach((chip) => {
     chip.classList.toggle("active", setRef.has(chip.dataset.value));
   });
 }
 
 function syncStatStrip() {
-  document.querySelectorAll(".stat-pill").forEach(pill => {
+  document.querySelectorAll(".stat-pill").forEach((pill) => {
     const value = pill.dataset.value;
-    pill.classList.toggle("active", value ? state.modality.has(value) : state.modality.size === 0);
+    pill.classList.toggle(
+      "active",
+      value ? state.modality.has(value) : state.modality.size === 0,
+    );
   });
 }
 
@@ -91,10 +94,15 @@ function commercialBucket(value) {
 
 function matches(model) {
   const haystack = Object.values(model).join(" ").toLowerCase();
-  if (state.search && !haystack.includes(state.search.toLowerCase())) return false;
+  if (state.search && !haystack.includes(state.search.toLowerCase()))
+    return false;
   if (state.modality.size && !state.modality.has(model.modality)) return false;
   if (state.license.size && !state.license.has(model.licenseType)) return false;
-  if (state.commercial && commercialBucket(model.commercialUse) !== state.commercial) return false;
+  if (
+    state.commercial &&
+    commercialBucket(model.commercialUse) !== state.commercial
+  )
+    return false;
   return true;
 }
 
@@ -108,7 +116,11 @@ function sortModels(list) {
       sorted.sort((a, b) => parseInt(a.year) - parseInt(b.year));
       break;
     case "modality":
-      sorted.sort((a, b) => a.modality.localeCompare(b.modality) || a.model.localeCompare(b.model));
+      sorted.sort(
+        (a, b) =>
+          a.modality.localeCompare(b.modality) ||
+          a.model.localeCompare(b.model),
+      );
       break;
     default:
       sorted.sort((a, b) => a.model.localeCompare(b.model));
@@ -162,13 +174,13 @@ function openModal(model) {
     ["License Type", model.licenseType],
     ["License Name", model.licenseName],
     ["Commercial Use?", model.commercialUse],
-    ["Open Source?", model.openSource]
+    ["Open Source?", model.openSource],
   ];
   const dataProvenance = [
     ["Training Data Disclosed?", model.dataDisclosed],
     ["Training Data Source(s)", model.dataSources],
     ["Attribution Mechanism", model.attribution],
-    ["Key Data / IP Gap", model.dataGap]
+    ["Key Data / IP Gap", model.dataGap],
   ];
   const technical = [
     ["Modality", model.modality],
@@ -176,7 +188,7 @@ function openModal(model) {
     ["Fine-tune / Train from Scratch?", model.finetune],
     ["Checkpoint Released?", model.checkpoint],
     ["API Available?", model.api],
-    ["Output Export Format", model.exportFormat]
+    ["Output Export Format", model.exportFormat],
   ];
 
   const section = (title, fields) => `
@@ -207,11 +219,11 @@ function closeModal() {
   document.getElementById("modal-overlay").hidden = true;
 }
 
-document.getElementById("modal-overlay").addEventListener("click", e => {
+document.getElementById("modal-overlay").addEventListener("click", (e) => {
   if (e.target.id === "modal-overlay") closeModal();
 });
 
-document.addEventListener("keydown", e => {
+document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeModal();
     return;
@@ -222,17 +234,17 @@ document.addEventListener("keydown", e => {
   }
 });
 
-document.getElementById("search").addEventListener("input", e => {
+document.getElementById("search").addEventListener("input", (e) => {
   state.search = e.target.value;
   render();
 });
 
-document.getElementById("commercial-filter").addEventListener("change", e => {
+document.getElementById("commercial-filter").addEventListener("change", (e) => {
   state.commercial = e.target.value;
   render();
 });
 
-document.getElementById("sort-by").addEventListener("change", e => {
+document.getElementById("sort-by").addEventListener("change", (e) => {
   state.sort = e.target.value;
   render();
 });
@@ -246,7 +258,9 @@ document.getElementById("reset-filters").addEventListener("click", () => {
   document.getElementById("search").value = "";
   document.getElementById("commercial-filter").value = "";
   document.getElementById("sort-by").value = "name";
-  document.querySelectorAll(".chip.active").forEach(c => c.classList.remove("active"));
+  document
+    .querySelectorAll(".chip.active")
+    .forEach((c) => c.classList.remove("active"));
   syncStatStrip();
   render();
 });
