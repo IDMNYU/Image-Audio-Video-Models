@@ -17,7 +17,8 @@ const MODELS = [
     exportFormat: "PNG, JPG, WebP",
     openSource: "Yes",
     dataGap: "Training data sourced from web scrape without creator consent; no attribution tool; revenue threshold gate",
-    notes: "Most widely deployed open image model. LAION dataset faced copyright lawsuits (Getty v. Stability AI)."
+    notes: "Most widely deployed open image model. LAION dataset faced copyright lawsuits (Getty v. Stability AI).",
+    workflow: { folder: "Stable Diffusion 35", json: "StableDiffusion35.json", image: "SD35_output_00001_.png" }
   },
   {
     model: "FLUX.1 (Schnell/Dev)",
@@ -37,7 +38,8 @@ const MODELS = [
     exportFormat: "PNG, JPG, WebP",
     openSource: "Yes",
     dataGap: "Apache Schnell variant is open but training data fully undisclosed; split licensing model creates confusion",
-    notes: "State-of-the-art quality in 2024-25. Schnell = best open image model. Data provenance = black box."
+    notes: "State-of-the-art quality in 2024-25. Schnell = best open image model. Data provenance = black box.",
+    workflow: { folder: "FLUX.1", json: "Flux1.json", image: "FLUX1_output_00001_.png" }
   },
   {
     model: "Stable Diffusion XL",
@@ -57,7 +59,8 @@ const MODELS = [
     exportFormat: "PNG, JPG, SafeTensors, GGUF",
     openSource: "Yes",
     dataGap: "RAIL-M restricts harmful use but no attribution for training artists; LAION lawsuit pending",
-    notes: "RAIL-M was first attempt at responsible use license for diffusion models. Key reference."
+    notes: "RAIL-M was first attempt at responsible use license for diffusion models. Key reference.",
+    workflow: { folder: "Stable Diffusion XL", json: "StableDiffusionXL.json", image: "SDXL_output_00001_.png" }
   },
   {
     model: "DeepFloyd IF",

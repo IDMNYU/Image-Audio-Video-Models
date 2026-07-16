@@ -166,9 +166,19 @@ function render() {
   filtered.forEach((m, i) => grid.appendChild(cardTemplate(m, i)));
 }
 
+function workflowPath(wf, file) {
+  return (
+    "Image Audio Video Models/" +
+    encodeURIComponent(wf.folder) +
+    "/" +
+    encodeURIComponent(file)
+  );
+}
+
 function openModal(model) {
   const overlay = document.getElementById("modal-overlay");
   const content = document.getElementById("modal-content");
+  const wf = model.workflow || null;
 
   const licensing = [
     ["License Type", model.licenseType],
@@ -198,6 +208,20 @@ function openModal(model) {
     </div>
   `;
 
+  const detailsHTML =
+    section("Licensing", licensing) +
+    section("Data Provenance", dataProvenance) +
+    section("Technical", technical) +
+    section("Notes / Ecosystem Fit", [["Summary", model.notes]]);
+
+  const tabBar = wf
+    ? `<div class="modal-tabs" role="tablist">
+        <button class="modal-tab active" data-tab="details">Details</button>
+        <button class="modal-tab" data-tab="output">Output</button>
+        <button class="modal-tab" data-tab="workflow">Workflow JSON</button>
+      </div>`
+    : "";
+
   content.innerHTML = `
     <div class="modal-top">
       <div>
@@ -206,13 +230,49 @@ function openModal(model) {
       </div>
       <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
     </div>
-    ${section("Licensing", licensing)}
-    ${section("Data Provenance", dataProvenance)}
-    ${section("Technical", technical)}
-    ${section("Notes / Ecosystem Fit", [["Summary", model.notes]])}
+    ${tabBar}
+    <div class="modal-tab-panel" data-panel="details">${detailsHTML}</div>
+    ${wf ? `<div class="modal-tab-panel hidden" data-panel="output">
+      <div class="workflow-output">
+        <img src="${workflowPath(wf, wf.image)}" alt="Model output example" class="workflow-img">
+      </div>
+    </div>
+    <div class="modal-tab-panel hidden" data-panel="workflow">
+      <div class="workflow-json-wrap">
+        <pre class="workflow-json" id="workflow-json-pre"><span class="wf-loading">Loading…</span></pre>
+      </div>
+    </div>` : ""}
   `;
+
   overlay.hidden = false;
   document.getElementById("modal-close").addEventListener("click", closeModal);
+
+  if (!wf) return;
+
+  // Tab switching
+  content.querySelectorAll(".modal-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      content.querySelectorAll(".modal-tab").forEach((t) => t.classList.remove("active"));
+      content.querySelectorAll(".modal-tab-panel").forEach((p) => p.classList.add("hidden"));
+      tab.classList.add("active");
+      content.querySelector(`[data-panel="${tab.dataset.tab}"]`).classList.remove("hidden");
+
+      // Lazy-load JSON when workflow tab first opened
+      if (tab.dataset.tab === "workflow") {
+        const pre = document.getElementById("workflow-json-pre");
+        if (pre && pre.querySelector(".wf-loading")) {
+          fetch(workflowPath(wf, wf.json))
+            .then((r) => r.json())
+            .then((data) => {
+              pre.textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(() => {
+              pre.textContent = "Could not load workflow JSON.";
+            });
+        }
+      }
+    });
+  });
 }
 
 function closeModal() {
