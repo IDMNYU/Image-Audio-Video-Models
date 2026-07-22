@@ -581,10 +581,12 @@ footer .funder { color: var(--ink); }
   align-items: start;
 }
 .mission-title {
-  font-family: var(--serif);
-  font-weight: 600;
+  font-family: var(--mono);
+  font-weight: 700;
   font-size: clamp(26px, 3vw, 36px);
   line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
 .mission-body p { font-family: var(--grot); font-size: 17px; line-height: 1.62; margin: 0 0 18px; }
 .mission-body p:last-child { margin-bottom: 0; }
