@@ -4,123 +4,110 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Open-Source AI Model Landscape: Image · Video · Audio</title>
+    <title>Open-Source AI Model Landscape · Common Trust</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Cormorant:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles1.css" />
   </head>
   <body>
-    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-    <header>
-      <h1>Open-Source AI Model Landscape</h1>
-      <p class="subtitle">
-        A database of image, video and audio generation models — License, Data
-        &amp; Attribution
-      </p>
-      <div class="stat-strip" id="stat-strip"></div>
-    </header>
+    <div class="page">
+      <nav class="site-nav">
+        <div class="brand">
+          <span class="wordmark">Common Trust<span class="dot">.</span></span>
+          <span class="tagline">Federated Data Commons for Creative Communities</span>
+        </div>
+      </nav>
+      <div class="rule"></div>
 
-    <main>
-      <section class="controls">
-        <div class="search-wrap">
+      <header>
+        <h1>Open-Source AI Model Landscape<span class="dot">.</span></h1>
+        <p class="subtitle">
+          A database of image, video and audio generation models. License, data
+          &amp; attribution.
+        </p>
+        <div class="stat-strip" id="stat-strip"></div>
+      </header>
+
+      <main>
+        <div class="search-bar">
           <svg
             class="search-icon"
             viewBox="0 0 24 24"
-            width="18"
-            height="18"
+            width="20"
+            height="20"
             aria-hidden="true"
           >
-            <circle
-              cx="11"
-              cy="11"
-              r="7"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-            <line
-              x1="21"
-              y1="21"
-              x2="16.65"
-              y2="16.65"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </svg>
-          <input
-            type="text"
-            id="search"
-            placeholder="Search model, developer, license, notes..."
-          />
+          <input type="text" id="search" placeholder="Search model, developer or license" />
           <kbd class="search-kbd">/</kbd>
         </div>
 
-        <div class="filter-group">
-          <span class="filter-label">Modality</span>
-          <div class="chip-row" id="modality-filters"></div>
+        <section class="filter-panel">
+          <div class="filter-col">
+            <span class="filter-label">Modality</span>
+            <div class="chip-row" id="modality-filters"></div>
+          </div>
+          <div class="filter-col col-license">
+            <span class="filter-label">License Type</span>
+            <div class="chip-row" id="license-filters"></div>
+          </div>
+          <div class="filter-col">
+            <span class="filter-label">Commercial Use</span>
+            <select id="commercial-filter">
+              <option value="">Any</option>
+              <option value="full">Full</option>
+              <option value="partial">Partial / Conditional</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div class="filter-col">
+            <span class="filter-label">Sort by</span>
+            <select id="sort-by">
+              <option value="name">Name A–Z</option>
+              <option value="year-desc">Year (newest)</option>
+              <option value="year-asc">Year (oldest)</option>
+              <option value="modality">Modality</option>
+            </select>
+          </div>
+        </section>
+
+        <div class="result-bar">
+          <p class="result-count" id="result-count"></p>
+          <button id="reset-filters">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5" />
+            </svg>
+            Reset
+          </button>
         </div>
 
-        <div class="filter-group">
-          <span class="filter-label">License Type</span>
-          <div class="chip-row" id="license-filters"></div>
+        <section id="card-grid" class="card-grid"></section>
+
+        <div class="no-results" id="no-results" hidden>
+          <p class="no-results-emoji">🔍</p>
+          <p>No models match your filters.</p>
         </div>
-
-        <div class="filter-group">
-          <span class="filter-label">Commercial Use</span>
-          <select id="commercial-filter">
-            <option value="">Any</option>
-            <option value="full">Full</option>
-            <option value="partial">Partial / Conditional</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-
-        <div class="filter-group">
-          <span class="filter-label">Sort by</span>
-          <select id="sort-by">
-            <option value="name">Name (A–Z)</option>
-            <option value="year-desc">Year (newest)</option>
-            <option value="year-asc">Year (oldest)</option>
-            <option value="modality">Modality</option>
-          </select>
-        </div>
-
-        <button id="reset-filters">
-          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
-            <path
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"
-            />
-          </svg>
-          Reset
-        </button>
-      </section>
-
-      <p class="result-count" id="result-count"></p>
-
-      <section id="card-grid" class="card-grid"></section>
-
-      <div class="no-results" id="no-results" hidden>
-        <p class="no-results-emoji">🔍</p>
-        <p>No models match your filters.</p>
-      </div>
-    </main>
+      </main>
+    </div>
 
     <div class="modal-overlay" id="modal-overlay" hidden>
       <div class="modal" id="modal-content"></div>
     </div>
 
     <footer>
-      <p>
-        Data compiled as a part of the Federated Data Commons for Creative
-        Communities project.
-      </p>
+      <p class="funder">We are an AHRC Braid funded research project.</p>
     </footer>
 
     <script src="data.js"></script>
     <script src="script.js"></script>
+    <script src="bg.js"></script>
   </body>
 </html>

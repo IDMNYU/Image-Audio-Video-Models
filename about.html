@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>About · Common Trust</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Cormorant:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles1.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <div class="page">
+      <nav class="site-nav">
+        <div class="brand">
+          <span class="wordmark">Common Trust<span class="dot">.</span></span>
+          <span class="tagline">Federated Data Commons for Creative Communities</span>
+        </div>
+        <div class="nav-links">
+          <a href="about.html" class="active">About</a>
+          <a href="index.html">Landscape</a>
+          <a href="people.html">People</a>
+        </div>
+      </nav>
+      <div class="rule"></div>
+
+      <header class="sub-hero">
+        <div class="eyebrow">About the project</div>
+        <h1 class="sub-h1">A commons for creative data<span class="dot">.</span></h1>
+        <p class="lead">
+          An international collaboration between researchers in the United
+          Kingdom and the United States, holding creative data in common.
+        </p>
+      </header>
+
+      <section class="mission">
+        <div class="mission-title">Why we built this</div>
+        <div class="mission-body">
+          <p>
+            Federated Data Commons for Creative Communities is an AHRC-funded
+            effort to prove that sharing creative work and keeping control of it
+            are not opposites. For two decades, contributing to a shared
+            collection has meant handing it to a platform, and discovering, too
+            late, when the owner changes the terms.
+          </p>
+          <p>
+            We're building the opposite: a commons where your data lives on a
+            node you hold, speaks to other nodes through signals rather than
+            surrender, and stays governed by the people inside it. The
+            <a href="index.html">model landscape</a> is our first public
+            artifact, a transparent database of how open the "open" models
+            really are.
+          </p>
+        </div>
+      </section>
+
+      <div class="section-label"><span>How the pool works</span><span class="rule-fill"></span></div>
+      <section class="steps">
+        <div class="step">
+          <svg width="54" height="54" viewBox="0 0 100 100" aria-hidden="true"><path fill="#ff2d9b" d="M50 2l9 13 15-6 2 16 16 3-9 13 9 13-16 3-2 16-15-6-9 13-9-13-15 6-2-16-16-3 9-13-9-13 16-3 2-16 15 6z"></path><text x="50" y="63" text-anchor="middle" font-family="Space Mono, monospace" font-weight="700" font-size="34" fill="#fff">1</text></svg>
+          <div class="step-title">Contribute</div>
+          <p>Add your work to a local node you own and administer. Nothing leaves your control.</p>
+        </div>
+        <div class="step">
+          <svg width="54" height="54" viewBox="0 0 100 100" aria-hidden="true"><path fill="#1f5cff" d="M50 2l9 13 15-6 2 16 16 3-9 13 9 13-16 3-2 16-15-6-9 13-9-13-15 6-2-16-16-3 9-13-9-13 16-3 2-16 15 6z"></path><text x="50" y="63" text-anchor="middle" font-family="Space Mono, monospace" font-weight="700" font-size="34" fill="#fff">2</text></svg>
+          <div class="step-title">Federate</div>
+          <p>Nodes exchange signals (patterns, summaries, agreements) while originals stay put.</p>
+        </div>
+        <div class="step">
+          <svg width="54" height="54" viewBox="0 0 100 100" aria-hidden="true"><path fill="#12b37d" d="M50 2l9 13 15-6 2 16 16 3-9 13 9 13-16 3-2 16-15-6-9 13-9-13-15 6-2-16-16-3 9-13-9-13 16-3 2-16 15 6z"></path><text x="50" y="63" text-anchor="middle" font-family="Space Mono, monospace" font-weight="700" font-size="34" fill="#fff">3</text></svg>
+          <div class="step-title">Govern</div>
+          <p>The community sets the terms of use together, and every member can withdraw at will.</p>
+        </div>
+      </section>
+
+      <div class="section-label"><span>What we're building</span><span class="rule-fill"></span></div>
+      <section class="principles">
+        <div class="principle">
+          <div class="tag" style="color: var(--pink);">Local-first</div>
+          <div class="p-title">Your compute, your data</div>
+          <p>Run open models locally, on hardware you control, over data you own.</p>
+        </div>
+        <div class="principle">
+          <div class="tag" style="color: var(--blue);">Collective</div>
+          <div class="p-title">We, not you-the-user</div>
+          <p>The commons is a group. Shared verbs, shared stakes, shared say.</p>
+        </div>
+        <div class="principle">
+          <div class="tag" style="color: var(--jade);">Sovereign</div>
+          <div class="p-title">Consent by default</div>
+          <p>Every member can see, reshape, or withdraw their data at any time.</p>
+        </div>
+        <div class="principle dark">
+          <div class="tag" style="color: var(--pink);">Federated stream</div>
+          <div class="p-title">Federate your commons</div>
+          <p>Choose to federate your commons into the wider community, a federated collection of creative data.</p>
+          <div class="fed-toggle" id="fed-toggle">
+            <span class="switch"><span class="knob"></span></span>
+            <span class="switch-label">Local only</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>Join the newsletter.</h2>
+        <p class="lead">
+          Follow along as we build. We'll share progress, frameworks, and
+          workshops as they take shape.
+        </p>
+        <div class="cta-actions">
+          <a href="#" class="btn-solid">Follow the newsletter →</a>
+          <a href="index.html" class="btn-outline">Browse the landscape →</a>
+        </div>
+      </section>
+
+      <div class="sub-foot">We are an AHRC Braid funded research project.</div>
+    </div>
+
+    <script src="bg.js"></script>
+    <script>
+      var ft = document.getElementById("fed-toggle");
+      if (ft) {
+        ft.addEventListener("click", function () {
+          var on = ft.classList.toggle("on");
+          ft.querySelector(".switch-label").textContent = on ? "Federating" : "Local only";
+        });
+      }
+    </script>
+  </body>
+</html>

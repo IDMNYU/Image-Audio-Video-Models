@@ -130,20 +130,25 @@ function sortModels(list) {
 
 function cardTemplate(model, index) {
   const card = document.createElement("article");
-  card.className = "card";
+  card.className = "card modality-" + model.modality;
   card.style.animationDelay = `${Math.min(index * 35, 350)}ms`;
+  const bucket = commercialBucket(model.commercialUse);
+  const commLabel =
+    bucket === "full" ? "commercial ok" : bucket === "no" ? "non-commercial" : "conditional";
+  const commClass = bucket === "full" ? "comm-ok" : "comm-no";
   card.innerHTML = `
-    <div class="card-top">
-      <div>
-        <h3>${model.model}</h3>
-        <p class="developer">${model.developer} · ${model.year}</p>
+    <div class="card-bar"></div>
+    <div class="card-body">
+      <div class="card-head">
+        <span class="card-modality">${model.modality}</span>
+        <span class="card-license">${model.licenseType}</span>
       </div>
-      <span class="badge modality-${model.modality}">${model.modality}</span>
+      <h3>${model.model}</h3>
+      <p class="developer">${model.developer}</p>
+      <div class="card-foot">
+        <span class="commercial ${commClass}">${commLabel}</span>
+      </div>
     </div>
-    <div class="card-row"><span>Input → Output</span><span>${model.io}</span></div>
-    <div class="card-row"><span>Commercial Use</span><span>${model.commercialUse}</span></div>
-    <div class="card-row"><span>Data Disclosed</span><span>${model.dataDisclosed}</span></div>
-    <span class="license-pill type-${classify(model.licenseType)}">${model.licenseName}</span>
   `;
   card.addEventListener("click", () => openModal(model));
   return card;
