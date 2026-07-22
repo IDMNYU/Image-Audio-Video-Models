@@ -225,7 +225,7 @@ main {
   white-space: nowrap;
   transition: all 0.12s ease;
 }
-.chip:hover { background: rgba(17, 17, 17, 0.05); box-shadow: inset 0 0 0 1px var(--ink); }
+.chip:not(.active):hover { background: var(--white); box-shadow: inset 0 0 0 1px var(--ink), 4px 4px 0 var(--ink); transform: translate(-2px, -2px); }
 .chip.active { background: var(--ink); color: #fff; box-shadow: inset 0 0 0 1px var(--ink); }
 
 #commercial-filter, #sort-by {
@@ -670,9 +670,7 @@ footer .funder { color: var(--ink); }
 .person.us .person-role { color: var(--blue); }
 .person-name { font-family: var(--mono); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
 .person-name a { color: inherit; text-decoration: none; transition: color 0.15s ease; }
-.person-name a::after { content: "\2197"; font-size: 0.7em; margin-left: 5px; vertical-align: 2px; opacity: 0.35; transition: opacity 0.15s ease, color 0.15s ease; }
 .person-name a:hover { color: var(--pink); }
-.person-name a:hover::after { opacity: 1; color: var(--pink); }
 .person-aff { font-family: var(--grot); font-size: 14px; opacity: 0.65; }
 .person-bio { font-family: var(--grot); font-size: 13px; line-height: 1.5; opacity: 0.6; margin: 8px 0 0; }
 
