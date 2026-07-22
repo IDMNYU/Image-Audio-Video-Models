@@ -649,6 +649,13 @@ footer .funder { color: var(--ink); }
   text-transform: uppercase;
   overflow: hidden;
 }
+.person-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 .person-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .person-info { padding: 20px; display: flex; flex-direction: column; gap: 6px; }
 .person-role { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
