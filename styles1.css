@@ -676,3 +676,42 @@ footer .funder { color: var(--ink); }
 .legal-aff { font-family: var(--grot); font-size: 14px; opacity: 0.6; margin-top: 4px; }
 
 .sub-foot { margin-top: 48px; padding-top: 26px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; padding-bottom: 80px; }
+
+/* ============================================================================
+   Mobile optimisation — placed last so it overrides subpage base styles.
+   Fits wide mono headings to the viewport and enlarges the smallest text.
+   ============================================================================ */
+@media (max-width: 600px) {
+  html, body { overflow-x: hidden; }
+
+  /* keep wide mono headings inside the viewport */
+  header h1, .sub-h1 { font-size: clamp(26px, 7.6vw, 38px); word-spacing: -0.08em; }
+  .cta h2 { font-size: clamp(26px, 7vw, 40px); }
+
+  /* section labels wrap instead of clipping the count */
+  .section-label { flex-wrap: wrap; gap: 10px 14px; }
+  .rule-fill { flex: 1 1 30px; }
+
+  /* two even stat cells per row */
+  .stat-pill { min-width: 45%; padding: 16px 18px; }
+
+  /* larger, easier-to-read small text on mobile */
+  .tagline { font-size: 11px; letter-spacing: 0.08em; }
+  .partner-loc,
+  .filter-label,
+  .card-modality,
+  .card-license,
+  .modal-section-title,
+  .principle .tag,
+  .person-role,
+  .eyebrow,
+  .section-label > span,
+  .section-label .count { font-size: 12px; }
+  .person-bio,
+  .partner-desc,
+  .step p,
+  .principle p,
+  .card .developer { font-size: 14px; line-height: 1.55; }
+  .person-aff { font-size: 15px; }
+  .mission-body p { font-size: 16px; }
+}
