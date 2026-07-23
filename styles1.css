@@ -2,7 +2,7 @@
   --pink: #ff2d9b;
   --blue: #1f5cff;
   --jade: #12b37d;
-  --jade-light: #56cfa6;
+  --pink-light: #ff7ac2;
   --gray: #9b9b9b;
   --ink: #111111;
   --white: #ffffff;
@@ -139,7 +139,7 @@ header h1 .dot { color: var(--pink); }
 .stat-pill.stat-Image strong { color: var(--pink); }
 .stat-pill.stat-Video strong { color: var(--blue); }
 .stat-pill.stat-Audio strong { color: var(--jade); }
-.stat-pill.stat-Text strong { color: var(--jade-light); }
+.stat-pill.stat-Text strong { color: var(--pink-light); }
 .stat-pill:hover { background: rgba(17,17,17,0.04); }
 .stat-pill.stat-all:hover { background: #000; }
 .stat-pill.stat-Image.active { background: var(--pink); color: #fff; }
@@ -148,8 +148,8 @@ header h1 .dot { color: var(--pink); }
 .stat-pill.stat-Video.active strong { color: #fff; }
 .stat-pill.stat-Audio.active { background: var(--jade); color: #04140e; }
 .stat-pill.stat-Audio.active strong { color: #04140e; }
-.stat-pill.stat-Text.active { background: var(--jade-light); color: #04140e; }
-.stat-pill.stat-Text.active strong { color: #04140e; }
+.stat-pill.stat-Text.active { background: var(--pink-light); color: var(--ink); }
+.stat-pill.stat-Text.active strong { color: var(--ink); }
 
 main {
   max-width: none;
@@ -320,7 +320,7 @@ main {
 .card.modality-Image .card-bar { background: var(--pink); }
 .card.modality-Video .card-bar { background: var(--blue); }
 .card.modality-Audio .card-bar { background: var(--jade); }
-.card.modality-Text .card-bar { background: var(--jade-light); }
+.card.modality-Text .card-bar { background: var(--pink-light); }
 
 .card-body {
   padding: 22px;
@@ -345,7 +345,7 @@ main {
 .card.modality-Image .card-modality { color: var(--pink); }
 .card.modality-Video .card-modality { color: var(--blue); }
 .card.modality-Audio .card-modality { color: var(--jade); }
-.card.modality-Text .card-modality { color: var(--jade-light); }
+.card.modality-Text .card-modality { color: var(--pink-light); }
 .card-license {
   font-family: var(--mono);
   font-size: 11px;
@@ -379,7 +379,7 @@ main {
 .card.modality-Image .comm-ok { color: var(--pink); }
 .card.modality-Video .comm-ok { color: var(--blue); }
 .card.modality-Audio .comm-ok { color: var(--jade); }
-.card.modality-Text .comm-ok { color: var(--jade-light); }
+.card.modality-Text .comm-ok { color: var(--pink-light); }
 .comm-no { color: var(--gray); }
 
 .no-results {
