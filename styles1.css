@@ -3,7 +3,10 @@
   --blue: #1f5cff;
   --jade: #12b37d;
   --pink-light: #ff7ac2;
-  --gray: #9b9b9b;
+  --pink-ink: #c11574;
+  --jade-ink: #0a7a54;
+  --text-ink: #b23a80;
+  --gray: #6f6f6f;
   --ink: #111111;
   --white: #ffffff;
   --oxblood: #451018;
@@ -72,7 +75,7 @@ body {
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  opacity: 0.5;
+  opacity: 0.62;
 }
 .rule { border-top: 2px solid var(--ink); }
 
@@ -123,7 +126,7 @@ header h1 .dot { color: var(--pink); }
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(17, 17, 17, 0.55);
+  color: rgba(17, 17, 17, 0.62);
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
   box-shadow: inset 1px 0 0 var(--line);
@@ -139,8 +142,8 @@ header h1 .dot { color: var(--pink); }
 .stat-pill.stat-all strong { color: #fff; }
 .stat-pill.stat-Image strong { color: var(--pink); }
 .stat-pill.stat-Video strong { color: var(--blue); }
-.stat-pill.stat-Audio strong { color: var(--jade); }
-.stat-pill.stat-Text strong { color: var(--pink-light); }
+.stat-pill.stat-Audio strong { color: var(--jade-ink); }
+.stat-pill.stat-Text strong { color: var(--text-ink); }
 .stat-pill:hover { background: rgba(17,17,17,0.04); }
 .stat-pill.stat-all:hover { background: #000; }
 .stat-pill.stat-Image.active { background: var(--pink); color: #fff; }
@@ -343,16 +346,16 @@ main {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-.card.modality-Image .card-modality { color: var(--pink); }
+.card.modality-Image .card-modality { color: var(--pink-ink); }
 .card.modality-Video .card-modality { color: var(--blue); }
-.card.modality-Audio .card-modality { color: var(--jade); }
-.card.modality-Text .card-modality { color: var(--pink-light); }
+.card.modality-Audio .card-modality { color: var(--jade-ink); }
+.card.modality-Text .card-modality { color: var(--text-ink); }
 .card-license {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.5;
+  opacity: 0.62;
 }
 .card h3 {
   margin: 0;
@@ -377,10 +380,10 @@ main {
   font-size: 12px;
   letter-spacing: 0.02em;
 }
-.card.modality-Image .comm-ok { color: var(--pink); }
+.card.modality-Image .comm-ok { color: var(--pink-ink); }
 .card.modality-Video .comm-ok { color: var(--blue); }
-.card.modality-Audio .comm-ok { color: var(--jade); }
-.card.modality-Text .comm-ok { color: var(--pink-light); }
+.card.modality-Audio .comm-ok { color: var(--jade-ink); }
+.card.modality-Text .comm-ok { color: var(--text-ink); }
 .comm-no { color: var(--gray); }
 
 .no-results {
@@ -461,7 +464,7 @@ footer .funder { color: var(--ink); }
   gap: 8px;
   margin-bottom: 1.4rem;
   padding: 12px 18px;
-  background: var(--pink);
+  background: var(--pink-ink);
   color: #fff;
   font-family: var(--mono);
   font-weight: 700;
@@ -501,7 +504,7 @@ footer .funder { color: var(--ink); }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  color: rgba(17, 17, 17, 0.55);
+  color: rgba(17, 17, 17, 0.62);
   box-shadow: inset 1px 0 0 var(--line);
 }
 .modal-tab:first-child { box-shadow: none; }
@@ -515,12 +518,12 @@ footer .funder { color: var(--ink); }
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--pink);
+  color: var(--pink-ink);
   margin: 0 0 0.6rem;
   font-weight: 700;
 }
 .modal dl { display: grid; grid-template-columns: 180px 1fr; gap: 0.6rem 1rem; margin: 0; }
-.modal dt { color: rgba(17, 17, 17, 0.55); font-size: 14px; font-family: var(--grot); }
+.modal dt { color: rgba(17, 17, 17, 0.62); font-size: 14px; font-family: var(--grot); }
 .modal dd { margin: 0; font-size: 14px; }
 
 .workflow-img { width: 100%; height: auto; box-shadow: inset 0 0 0 1px var(--ink); display: block; }
@@ -545,7 +548,7 @@ footer .funder { color: var(--ink); }
 }
 .nav-links a {
   color: var(--ink);
-  opacity: 0.55;
+  opacity: 0.65;
   text-decoration: none;
   padding-bottom: 3px;
   transition: color 0.12s ease, opacity 0.12s ease;
@@ -560,7 +563,7 @@ footer .funder { color: var(--ink); }
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--pink);
+  color: var(--pink-ink);
   margin-bottom: 22px;
 }
 .sub-h1 {
@@ -597,8 +600,8 @@ footer .funder { color: var(--ink); }
   text-transform: uppercase;
 }
 .section-label .rule-fill { flex: 1; height: 1px; background: var(--ink); }
-.section-label .count { font-weight: 400; opacity: 0.55; }
-.section-label.uk { color: var(--pink); }
+.section-label .count { font-weight: 400; color: var(--gray); }
+.section-label.uk { color: var(--pink-ink); }
 .section-label.us { color: var(--blue); }
 
 .mission {
@@ -618,7 +621,7 @@ footer .funder { color: var(--ink); }
 }
 .mission-body p { font-family: var(--grot); font-size: 17px; line-height: 1.62; margin: 0 0 18px; }
 .mission-body p:last-child { margin-bottom: 0; }
-.mission-body a { color: var(--pink); border-bottom: 1.5px solid var(--pink); text-decoration: none; }
+.mission-body a { color: var(--pink-ink); border-bottom: 1.5px solid var(--pink-ink); text-decoration: none; }
 @media (max-width: 720px) { .mission { grid-template-columns: 1fr; gap: 20px; } }
 
 .steps { display: flex; flex-wrap: wrap; box-shadow: inset 0 0 0 1px var(--ink); background: var(--white); }
@@ -651,11 +654,11 @@ footer .funder { color: var(--ink); }
 .switch-label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); }
 .fed-toggle.on .switch-label { color: var(--jade); }
 
-.cta { margin-top: 80px; background: var(--pink); color: #fff; padding: 64px 52px; }
+.cta { margin-top: 80px; background: var(--pink-ink); color: #fff; padding: 64px 52px; }
 .cta h2 { font-family: var(--mono); font-weight: 700; font-size: clamp(30px, 4vw, 52px); line-height: 1.05; letter-spacing: -0.02em; word-spacing: -0.14em; margin: 0; max-width: 16ch; }
 .cta .lead { color: #fff; opacity: 0.95; }
 .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
-.btn-solid { font-family: var(--mono); font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; background: #fff; color: var(--pink); padding: 14px 20px; text-decoration: none; }
+.btn-solid { font-family: var(--mono); font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; background: #fff; color: var(--pink-ink); padding: 14px 20px; text-decoration: none; }
 .btn-outline { font-family: var(--mono); font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; padding: 14px 20px; box-shadow: inset 0 0 0 1.5px #fff; text-decoration: none; }
 
 .people-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(258px, 1fr)); gap: 16px; }
@@ -689,12 +692,12 @@ footer .funder { color: var(--ink); }
   letter-spacing: 0;
   text-transform: none;
   color: var(--ink);
-  opacity: 0.55;
+  opacity: 0.62;
 }
 .person-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .person-info { padding: 20px; display: flex; flex-direction: column; gap: 6px; }
 .person-role { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-.person.uk .person-role { color: var(--pink); }
+.person.uk .person-role { color: var(--pink-ink); }
 .person.us .person-role { color: var(--blue); }
 .person-name { font-family: var(--mono); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
 .person-name a { color: inherit; text-decoration: none; transition: color 0.15s ease; }
@@ -710,7 +713,7 @@ footer .funder { color: var(--ink); }
 .partner.de .bar { background: var(--jade); }
 .partner-info { padding: 20px; display: flex; flex-direction: column; gap: 6px; }
 .partner-name { font-family: var(--mono); font-weight: 700; font-size: 17px; letter-spacing: -0.01em; overflow-wrap: anywhere; }
-.partner-loc { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+.partner-loc { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.62; }
 .partner-desc { font-family: var(--grot); font-size: 13px; line-height: 1.5; opacity: 0.65; margin-top: 4px; }
 
 .legal-panel { display: flex; flex-wrap: wrap; box-shadow: inset 0 0 0 1px var(--ink); background: var(--white); }
@@ -758,4 +761,59 @@ footer .funder { color: var(--ink); }
   .card .developer { font-size: 14px; line-height: 1.55; }
   .person-aff { font-size: 15px; }
   .mission-body p { font-size: 16px; }
+}
+
+/* ============================================================================
+   Accessibility — focus visibility, skip link, reduced motion
+   ============================================================================ */
+
+/* Skip-to-content link (visible on keyboard focus) */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  z-index: 200;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 10px 16px;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 8px; }
+
+/* Visible keyboard focus for every interactive element */
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+/* the search field and selects clear the default outline; restore it for keyboard */
+#search:focus-visible,
+#commercial-filter:focus-visible,
+#sort-by:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+/* chips and stat pills are <button> — strip native chrome, keep the design */
+button.chip,
+button.stat-pill {
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: left;
+}
+/* keyboard focus for the card (role="button") */
+.card:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  #bg-canvas { display: none; }
 }

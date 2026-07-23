@@ -3,6 +3,12 @@
 (function () {
   const canvas = document.getElementById("bg-canvas");
   if (!canvas) return;
+  // Respect users who prefer reduced motion: skip the ambient animation.
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  )
+    return;
   const ctx = canvas.getContext("2d");
   const PINK = "255,45,155";
   const SP = 40;

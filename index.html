@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="styles1.css" />
   </head>
   <body>
+    <a class="skip-link" href="#content">Skip to models</a>
     <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
     <div class="page">
@@ -30,13 +31,13 @@
       </nav>
       <div class="rule"></div>
 
-      <header>
+      <header id="content" tabindex="-1">
         <h1>Open-Source AI Model Landscape<span class="dot">.</span></h1>
         <p class="subtitle">
           A database of image, video, audio and text generation models. License,
           data &amp; attribution.
         </p>
-        <div class="stat-strip" id="stat-strip"></div>
+        <div class="stat-strip" id="stat-strip" role="group" aria-label="Model totals and modality filter"></div>
       </header>
 
       <main>
@@ -51,22 +52,22 @@
             <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </svg>
-          <input type="text" id="search" placeholder="Search model, developer or license" />
+          <input type="text" id="search" placeholder="Search model, developer or license" aria-label="Search models" />
           <kbd class="search-kbd">/</kbd>
         </div>
 
         <section class="filter-panel">
           <div class="filter-col">
-            <span class="filter-label">Modality</span>
-            <div class="chip-row" id="modality-filters"></div>
+            <span class="filter-label" id="label-modality">Modality</span>
+            <div class="chip-row" id="modality-filters" role="group" aria-labelledby="label-modality"></div>
           </div>
           <div class="filter-col col-license">
-            <span class="filter-label">License Type</span>
-            <div class="chip-row" id="license-filters"></div>
+            <span class="filter-label" id="label-license">License Type</span>
+            <div class="chip-row" id="license-filters" role="group" aria-labelledby="label-license"></div>
           </div>
           <div class="filter-col">
-            <span class="filter-label">Commercial Use</span>
-            <select id="commercial-filter">
+            <span class="filter-label" id="label-commercial">Commercial Use</span>
+            <select id="commercial-filter" aria-labelledby="label-commercial">
               <option value="">Any</option>
               <option value="full">Full</option>
               <option value="partial">Partial / Conditional</option>
@@ -74,8 +75,8 @@
             </select>
           </div>
           <div class="filter-col">
-            <span class="filter-label">Sort by</span>
-            <select id="sort-by">
+            <span class="filter-label" id="label-sort">Sort by</span>
+            <select id="sort-by" aria-labelledby="label-sort">
               <option value="name">Name A–Z</option>
               <option value="year-desc">Year (newest)</option>
               <option value="year-asc">Year (oldest)</option>
