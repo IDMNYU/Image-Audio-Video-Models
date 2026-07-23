@@ -66,6 +66,7 @@ body {
   color: var(--ink);
 }
 .wordmark .dot { color: var(--pink); }
+.wordmark-logo { height: 44px; width: auto; display: block; }
 .tagline {
   font-family: var(--mono);
   font-size: 10px;
