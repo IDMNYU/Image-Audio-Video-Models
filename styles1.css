@@ -453,6 +453,26 @@ footer .funder { color: var(--ink); }
 }
 .modal .developer { color: rgba(17, 17, 17, 0.6); font-size: 14px; margin: 0; }
 
+/* modal call-to-action: link out to the model */
+.model-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.4rem;
+  padding: 12px 18px;
+  background: var(--pink);
+  color: #fff;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.12s ease;
+}
+.model-link:hover { color: #fff; }
+.model-link:active { opacity: 0.78; }
+
 .modal-close {
   display: inline-flex;
   align-items: center;

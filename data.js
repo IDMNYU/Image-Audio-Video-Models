@@ -1,6 +1,7 @@
 const MODELS = [
   {
     model: "Stable Diffusion 3.5",
+    url: "https://huggingface.co/stabilityai/stable-diffusion-3.5-large",
     developer: "Stability AI",
     year: "2024",
     modality: "Image",
@@ -22,6 +23,7 @@ const MODELS = [
   },
   {
     model: "FLUX.1 (Schnell/Dev)",
+    url: "https://huggingface.co/black-forest-labs",
     developer: "Black Forest Labs",
     year: "2024",
     modality: "Image",
@@ -43,6 +45,7 @@ const MODELS = [
   },
   {
     model: "Stable Diffusion XL",
+    url: "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0",
     developer: "Stability AI",
     year: "2023",
     modality: "Image",
@@ -64,6 +67,7 @@ const MODELS = [
   },
   {
     model: "DeepFloyd IF",
+    url: "https://github.com/deep-floyd/IF",
     developer: "Stability AI / DeepFloyd",
     year: "2023",
     modality: "Image",
@@ -84,6 +88,7 @@ const MODELS = [
   },
   {
     model: "StyleGAN / StyleGAN3",
+    url: "https://github.com/NVlabs/stylegan3",
     developer: "NVIDIA",
     year: "2019-2021",
     modality: "Image",
@@ -104,6 +109,7 @@ const MODELS = [
   },
   {
     model: "AnimateDiff",
+    url: "https://github.com/guoyww/AnimateDiff",
     developer: "Shanghai AI Lab",
     year: "2023",
     modality: "Video",
@@ -124,6 +130,7 @@ const MODELS = [
   },
   {
     model: "Open-Sora (HPC-AI Tech)",
+    url: "https://github.com/hpcaitech/Open-Sora",
     developer: "HPC-AI Tech",
     year: "2024",
     modality: "Video",
@@ -144,6 +151,7 @@ const MODELS = [
   },
   {
     model: "Wan 2.1 (Alibaba)",
+    url: "https://github.com/Wan-Video/Wan2.1",
     developer: "Alibaba",
     year: "2025",
     modality: "Video",
@@ -164,6 +172,7 @@ const MODELS = [
   },
   {
     model: "MusicGen (Meta)",
+    url: "https://github.com/facebookresearch/audiocraft",
     developer: "Meta AI",
     year: "2023",
     modality: "Audio",
@@ -184,6 +193,7 @@ const MODELS = [
   },
   {
     model: "AudioCraft / EnCodec",
+    url: "https://github.com/facebookresearch/audiocraft",
     developer: "Meta AI",
     year: "2023",
     modality: "Audio",
@@ -204,6 +214,7 @@ const MODELS = [
   },
   {
     model: "Dance Diffusion (Harmonai)",
+    url: "https://github.com/Harmonai-org/sample-generator",
     developer: "Harmonai / Stability AI",
     year: "2022",
     modality: "Audio",
@@ -224,6 +235,7 @@ const MODELS = [
   },
   {
     model: "RAVE (IRCAM)",
+    url: "https://github.com/acids-ircam/RAVE",
     developer: "IRCAM / Antoine Caillon",
     year: "2022",
     modality: "Audio",
@@ -244,6 +256,7 @@ const MODELS = [
   },
   {
     model: "AudioLCM",
+    url: "https://audiolcm.github.io/",
     developer: "University researchers",
     year: "2023",
     modality: "Audio",
@@ -264,6 +277,7 @@ const MODELS = [
   },
   {
     model: "Stable Audio Open",
+    url: "https://stability.ai/news/introducing-stable-audio-open",
     developer: "Stability AI",
     year: "2024",
     modality: "Audio",
@@ -284,6 +298,7 @@ const MODELS = [
   },
   {
     model: "Aimi",
+    url: "https://www.aimi.fm/",
     developer: "aimi.fm",
     year: "2023",
     modality: "Audio",
@@ -304,6 +319,7 @@ const MODELS = [
   },
   {
     model: "AIVA",
+    url: "https://www.aiva.ai/",
     developer: "aiva.ai",
     year: "2019",
     modality: "Audio",
@@ -324,6 +340,7 @@ const MODELS = [
   },
   {
     model: "Amadeus Code App",
+    url: "https://amadeuscode.com/",
     developer: "amadeuscode.com",
     year: "2019",
     modality: "Audio",
@@ -344,6 +361,7 @@ const MODELS = [
   },
   {
     model: "Audialab",
+    url: "https://audialab.com/",
     developer: "audialab.com",
     year: "2021",
     modality: "Audio",
@@ -364,6 +382,7 @@ const MODELS = [
   },
   {
     model: "Boomy",
+    url: "https://boomy.com/",
     developer: "boomy.com",
     year: "2019",
     modality: "Audio",
@@ -384,6 +403,7 @@ const MODELS = [
   },
   {
     model: "Loudly Generator",
+    url: "https://www.loudly.com/",
     developer: "loudly.com",
     year: "2023",
     modality: "Audio",
@@ -404,6 +424,7 @@ const MODELS = [
   },
   {
     model: "R-VAE",
+    url: "https://github.com/vigliensoni/R-VAE",
     developer: "vigliensoni",
     year: "2022",
     modality: "Audio",
@@ -424,6 +445,7 @@ const MODELS = [
   },
   {
     model: "Magenta Continue",
+    url: "https://magenta.tensorflow.org/studio#continue",
     developer: "magenta.tensorflow.org",
     year: "2018",
     modality: "Audio",
@@ -444,6 +466,7 @@ const MODELS = [
   },
   {
     model: "Magenta Drumify",
+    url: "https://magenta.tensorflow.org/studio#drumify",
     developer: "magenta.tensorflow.org",
     year: "2018",
     modality: "Audio",
@@ -464,6 +487,7 @@ const MODELS = [
   },
   {
     model: "Mubert",
+    url: "https://mubert.com/",
     developer: "mubert.com",
     year: "2016",
     modality: "Audio",
@@ -484,6 +508,7 @@ const MODELS = [
   },
   {
     model: "MusicLM",
+    url: "https://google-research.github.io/seanet/musiclm/examples/",
     developer: "google-research.github.io",
     year: "2023",
     modality: "Audio",
@@ -504,6 +529,7 @@ const MODELS = [
   },
   {
     model: "Okio Nendo",
+    url: "https://okio.ai/",
     developer: "okio.ai",
     year: "2023",
     modality: "Audio",
@@ -524,6 +550,7 @@ const MODELS = [
   },
   {
     model: "Riffusion",
+    url: "https://www.riffusion.com/",
     developer: "riffusion.com",
     year: "2022",
     modality: "Audio",
@@ -544,6 +571,7 @@ const MODELS = [
   },
   {
     model: "SampleRNN",
+    url: "https://github.com/soroushmehr/sampleRNN_ICLR2017",
     developer: "soroushmehr",
     year: "2016",
     modality: "Audio",
@@ -564,6 +592,7 @@ const MODELS = [
   },
   {
     model: "Soundful",
+    url: "https://soundful.com/",
     developer: "soundful.com",
     year: "2023",
     modality: "Audio",
@@ -584,6 +613,7 @@ const MODELS = [
   },
   {
     model: "Soundraw",
+    url: "https://soundraw.io/",
     developer: "soundraw.io",
     year: "2024",
     modality: "Audio",
@@ -604,6 +634,7 @@ const MODELS = [
   },
   {
     model: "Splash Pro",
+    url: "https://www.splashmusic.com/",
     developer: "splashmusic.com",
     year: "2023",
     modality: "Audio",
@@ -624,6 +655,7 @@ const MODELS = [
   },
   {
     model: "Suno",
+    url: "https://suno.com",
     developer: "suno.com",
     year: "2023",
     modality: "Audio",
@@ -644,6 +676,7 @@ const MODELS = [
   },
   {
     model: "Udio",
+    url: "https://www.udio.com/",
     developer: "udio.com",
     year: "2024",
     modality: "Audio",
@@ -664,6 +697,7 @@ const MODELS = [
   },
   {
     model: "WaveNet",
+    url: "https://deepmind.google/discover/blog/wavenet-a-generative-model-for-raw-audio/",
     developer: "deepmind.google",
     year: "2016",
     modality: "Audio",
@@ -684,6 +718,7 @@ const MODELS = [
   },
   {
     model: "Music2Latent",
+    url: "https://github.com/SonyCSLParis/music2latent",
     developer: "SonyCSLParis",
     year: "2024",
     modality: "Audio",
@@ -704,6 +739,7 @@ const MODELS = [
   },
   {
     model: "Music FaderNets",
+    url: "https://music-fadernets.github.io/",
     developer: "music-fadernets.github.io",
     year: "2020",
     modality: "Audio",
@@ -724,6 +760,7 @@ const MODELS = [
   },
   {
     model: "Twoshot coproducer",
+    url: "https://twoshot.ai/coproducer",
     developer: "twoshot.ai",
     year: "2025",
     modality: "Audio",
@@ -744,6 +781,7 @@ const MODELS = [
   },
   {
     model: "Mustango",
+    url: "https://amaai-lab.github.io/mustango/",
     developer: "amaai-lab.github.io",
     year: "2023",
     modality: "Audio",
@@ -764,6 +802,7 @@ const MODELS = [
   },
   {
     model: "Calliope",
+    url: "https://metacreation.net/projects/calliope",
     developer: "metacreation.net",
     year: "2022",
     modality: "Audio",
@@ -784,6 +823,7 @@ const MODELS = [
   },
   {
     model: "Yue AI",
+    url: "https://map-yue.github.io/",
     developer: "map-yue.github.io",
     year: "2025",
     modality: "Audio",
@@ -804,6 +844,7 @@ const MODELS = [
   },
   {
     model: "DiffRhythm",
+    url: "https://aslp-lab.github.io/DiffRhythm.github.io/",
     developer: "aslp-lab.github.io",
     year: "2025",
     modality: "Audio",
@@ -824,6 +865,7 @@ const MODELS = [
   },
   {
     model: "Muzic ROC",
+    url: "https://github.com/microsoft/muzic/tree/main/roc",
     developer: "microsoft",
     year: "2022",
     modality: "Audio",
@@ -844,6 +886,7 @@ const MODELS = [
   },
   {
     model: "SongGen",
+    url: "https://liuzh-19.github.io/SongGen/",
     developer: "liuzh-19.github.io",
     year: "2025",
     modality: "Audio",
@@ -864,6 +907,7 @@ const MODELS = [
   },
   {
     model: "LLaMA 3 / 3.1",
+    url: "https://huggingface.co/meta-llama",
     developer: "Meta AI",
     year: "2024",
     modality: "Text",
@@ -884,6 +928,7 @@ const MODELS = [
   },
   {
     model: "Mistral 7B / Mixtral",
+    url: "https://huggingface.co/mistralai",
     developer: "Mistral AI",
     year: "2023",
     modality: "Text",
@@ -904,6 +949,7 @@ const MODELS = [
   },
   {
     model: "Falcon 3 / 180B",
+    url: "https://huggingface.co/tiiuae",
     developer: "TII (UAE)",
     year: "2022-2024",
     modality: "Text",
@@ -924,6 +970,7 @@ const MODELS = [
   },
   {
     model: "OLMo 2 / OLMo 3",
+    url: "https://allenai.org/olmo",
     developer: "Allen AI (AI2)",
     year: "2024-2025",
     modality: "Text",
@@ -944,6 +991,7 @@ const MODELS = [
   },
   {
     model: "BLOOM / BLOOMZ",
+    url: "https://huggingface.co/bigscience/bloom",
     developer: "BigScience / HuggingFace",
     year: "2022",
     modality: "Text",
@@ -964,6 +1012,7 @@ const MODELS = [
   },
   {
     model: "Pythia Suite",
+    url: "https://github.com/EleutherAI/pythia",
     developer: "EleutherAI",
     year: "2023",
     modality: "Text",
@@ -984,6 +1033,7 @@ const MODELS = [
   },
   {
     model: "DeepSeek R1 / V3",
+    url: "https://huggingface.co/deepseek-ai",
     developer: "DeepSeek (China)",
     year: "2025",
     modality: "Text",
@@ -1004,6 +1054,7 @@ const MODELS = [
   },
   {
     model: "Qwen 3 / Qwen 2.5",
+    url: "https://huggingface.co/Qwen",
     developer: "Alibaba Cloud",
     year: "2024-2025",
     modality: "Text",
@@ -1024,6 +1075,7 @@ const MODELS = [
   },
   {
     model: "Gemma 2 / 3",
+    url: "https://huggingface.co/google/gemma-2-9b",
     developer: "Google DeepMind",
     year: "2024-2025",
     modality: "Text",
@@ -1044,6 +1096,7 @@ const MODELS = [
   },
   {
     model: "Command R+ (Cohere)",
+    url: "https://huggingface.co/CohereLabs/c4ai-command-r-plus",
     developer: "Cohere",
     year: "2024",
     modality: "Text",
@@ -1064,6 +1117,7 @@ const MODELS = [
   },
   {
     model: "StableLM 2",
+    url: "https://huggingface.co/stabilityai/stablelm-2-12b",
     developer: "Stability AI",
     year: "2023-2024",
     modality: "Text",
@@ -1084,6 +1138,7 @@ const MODELS = [
   },
   {
     model: "GPT-NeoX / GPT-J",
+    url: "https://huggingface.co/EleutherAI/gpt-neox-20b",
     developer: "EleutherAI",
     year: "2021-2022",
     modality: "Text",

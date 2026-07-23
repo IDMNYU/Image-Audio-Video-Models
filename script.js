@@ -235,6 +235,7 @@ function openModal(model) {
       </div>
       <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
     </div>
+    ${model.url ? `<a class="model-link" href="${model.url}" target="_blank" rel="noopener">Visit model →</a>` : ""}
     ${tabBar}
     <div class="modal-tab-panel" data-panel="details">${detailsHTML}</div>
     ${wf ? `<div class="modal-tab-panel hidden" data-panel="output">
